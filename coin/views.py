@@ -11,20 +11,27 @@ def home(req):
 def register(req):
     if req.method == 'POST':
         data = req.POST
-        firstname = data.get('firstname')
-        lastname = data.get('lastname')
-        email = data.get('email')
-        password = data.get('password')
-        user = User()
-        user.username = firstname
-        user.email = email
-        user.set_password(password)
-        user.first_name = firstname
-        user.last_name = lastname
-        user.save()
-        return redirect('login')
-    return render(req,'register.html')
+        print(data)
+        terms =  data.get('terms')
+        if(terms=='on'):
+            print("can regis")
+        else:
+            print("go away")
+    #     firstname = data.get('firstname')
+    #     lastname = data.get('lastname')
+    #     email = data.get('email')
+    #     password = data.get('password')
+    #     user = User()
+    #     user.username = firstname
+    #     user.email = email
+    #     user.set_password(password)
+    #     user.first_name = firstname
+    #     user.last_name = lastname
+    #     user.save()
+    #     return redirect('login')
+    return render(req,'login.html')
 
 @login_required
 def addCoin(req):
+    
     return render(req,'addCoin.html')

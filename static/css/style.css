@@ -1,0 +1,15 @@
+.active-btn{
+    background: #5B0021;
+    color: white;
+}
+
+.wait-btn{
+    background: #AF1237;
+    color: white;
+}
+
+.btm-{
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+}

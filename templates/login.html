@@ -1,29 +1,82 @@
-{% extends "./share/layout.html" %}
+{% include './share/layout.html' %}
 {% load static %}
 {% block content %}
-
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
-<script src="{% static 'js/login.js' %}"></script>
 <div class="container">
-    <div class="card-box col-xl-6 col-sm-12 ">
-        <div class="row">   
-            <div class="col-xl-6 col-sm-10  "><button class="button" style="width:100%;background-color:gray;" id="signinBtn">Singin</button></div>
-            <div class="col-xl-6 col-sm-10"><a href="{% url 'register' %}"><button class="button" style="width:100%;" id="signupBtn">Singup</button></a></div>
-        </div>
-        <form action="" method="post">
-            {% csrf_token %}
-            <h2 class="mt-3">Signin</h2>
-            <div class="mb-3 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Firstname</label>
-                <div class="col-sm-10"><input type="text" class="form-control" name="username" ></div>
-            </div>
-            <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-       
-    </div>
+		<div class="row justify-content-md-center mt-4">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+				<div class="card active-btn" style="margin-top:100px">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-6"><p class="btn active-btn" id="signinbtn" style="width:100%">Signin</p></div>
+							<div class="col-6"><p class="btn wait-btn" id="signupbtn"  style="width:100%">Signup</p></div>
+						</div>
+						<form action="" method="post" id="signinform">
+						   {% csrf_token %}
+							<div class="row mt-4">
+								<div class="col-12">
+									<div class="form-group">
+									<label for="email">Email address:</label>
+										<input type="text" class="form-control" name="username"  placeholder="Email">
+									</div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+									<label for="password">password:</label>
+										<input type="password" class="form-control" name="password"  placeholder="Password">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+									<div class="btm-">If you forget <a href="http://" >your password</a></div>
+							</div>
+							<input type="submit" class="btn wait-btn" value="login">
+						</form>
+						<form action="signup" method="post" id="signupform">
+							{% csrf_token %}
+							<div class="row mt-4">
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+										<label for="email">Email :</label>
+										<input type="text" class="form-control" name="email"  placeholder="Email">
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+									<label for="password">password:</label>
+										<input type="password" class="form-control" name="password"  placeholder="Password">
+									</div>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+										<label for="email">Firstname :</label>
+										<input type="text" class="form-control" name="firstname"  placeholder="firstname">
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+									<label for="password">Lastname:</label>
+										<input type="text" class="form-control" name="lastname"  placeholder="lastname">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+									<div class="btm-">
+									<input type="checkbox" name="terms" id="terms" class="mx-2">I agree with the<a href="http://" > Terms</a>
+								</div>
+							</div>
+							<input type="submit" class="btn wait-btn" value="Signup">
+						</form>
+                    </div>
+				</div>
+			</div>
+		</div>
 </div>
 {% endblock content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
