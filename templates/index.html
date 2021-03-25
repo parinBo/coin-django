@@ -1,13 +1,143 @@
-{% extends "./share/layout.html" %}
-
-{% load static %}
-
+{% include './share/layout.html' %}
 {% block content %}
+<style> 
+@media (max-width: 2400px){
+  .bb{
+    width: 100px;
+    height: 100px;
+  }
+  .t1{
+    top:0px;
+    left:0px;
+    position: relative ;
+    background-color: red;
+    animation-name:example;
+    animation-duration:4s;
+  }
+  .t2{
+    top:-100px;
+    left:800px;
+    position: relative ;
+    background-color: red;
+    animation-name:example1;
+    animation-duration:4s;
+  }
+  .t3{
+    top:400px;
+    left:0px;
+    position: relative ;
+    background-color: red;
+    animation-name:example2;
+    animation-duration:4s;
+  }
+  .t4{
+    top:300px;
+    left:800px;
+    position: relative ;
+    background-color: red;
+    animation-name:example3;
+    animation-duration:4s;
+  }
+  
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:400px; top:0px;}
+  50%  {background-color:blue; left:400px; top:400px;}
+  75%  {background-color:green; left:0px; top:0px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+@keyframes example1 {
+  0%   {background-color:red; left:800px; top:-100px;}
+  25%  {background-color:yellow; left:400px; top:-100px;}
+  50%  {background-color:blue; left:400px; top:300px;}
+  75%  {background-color:green; left:800px; top:-100px;}
+  100% {background-color:red; left:800px; top:-100px;}
+}
+@keyframes example2 {
+  0%   {background-color:red; left:0px; top:400px;}
+  25%  {background-color:yellow; left:400px; top:400px;}
+  50%  {background-color:blue; left:400px; top:200px;}
+  75%  {background-color:green; left:0px; top:400px;}
+  100% {background-color:red; left:0px; top:400px;}
+}
+@keyframes example3 {
+  0%   {background-color:red; left:800px; top:300px;}
+  25%  {background-color:yellow; left:400px; top:300px;}
+  50%  {background-color:blue; left:400px; top:100px;}
+  75%  {background-color:green; left:800px; top:300px;}
+  100% {background-color:red; left:800px; top:300px;}
+}
+}
+@media (max-width: 500px){
+  .t1{
+  top:0px;
+  left:0px;
+  position: relative ;
+  background-color: red;
+  animation-name:example;
+  animation-duration:4s;
+  }
+  .t2{
+    top:-100px;
+    left:280px;
+    position: relative ;
+    background-color: red;
+    animation-name:example1;
+    animation-duration:4s;
+  }
+  .t3{
+    top:300px;
+    left:280px;
+    position: relative ;
+    background-color: red;
+    animation-name:example2;
+    animation-duration:4s;
+  }
+  .t4{
+    top:200px;
+    left:0px;
+    position: relative ;
+    background-color: red;
+    animation-name:example3;
+    animation-duration:4s;
+  }
 
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  20%  {background-color:yellow; left:140px; top:0px;}
+  50%  {background-color:blue; left:140px; top:100px;}
+  80%  {background-color:green; left:0px; top:0px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+@keyframes example1 {
+  0%   {background-color:red; left:280px; top:-100px;}
+  20%  {background-color:yellow; left:140px; top:-100px;}
+  50%  {background-color:blue; left:140px; top:0px;}
+  80%  {background-color:green; left:0px; top:0px;}
+  100% {background-color:red; left:280px; top:-100px;}
+}
+@keyframes example2 {
+  0%   {background-color:red; left:0px; top:300px;}
+  25%  {background-color:yellow; left:140px; top:200px;}
+  50%  {background-color:blue; left:140px; top:100px;}
+  75%  {background-color:green; left:0px; top:300px;}
+  100% {background-color:red; left:0px; top:300px;}
+}
+@keyframes example3 {
+  0%   {background-color:red; left:280px; top:200px;}
+  25%  {background-color:yellow; left:140px; top:200px;}
+  50%  {background-color:blue; left:140px; top:0px;}
+  75%  {background-color:green; left:280px; top:200px;}
+  100% {background-color:red; left:280px; top:200px;}
+}
+}
+
+</style>
 <div class="container">
-    <div class="d-flex justify-content-center">
-        <h1>test</h1>
-    </div>
-</div>
+	<h1>Hello</h1>
+<div class="bb t1"></div><div class="bb t2"></div>
+<div class="bb t3"></div><div class="bb t4"></div>
+
 
 {% endblock content %}
+

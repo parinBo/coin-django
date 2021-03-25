@@ -1,8 +1,8 @@
-$("input[type=submit]").attr("disabled",true)
+$("#signupInputbtn").attr("disabled",true)
 $("#terms").click(function(){
     if(document.getElementById("terms").checked){
-        $("input[type=submit]").attr("disabled",false)
+        $("#signupInputbtn").attr("disabled",false)
     }else{
-        $("input[type=submit]").attr("disabled",true)
+        $("#signupInputbtn").attr("disabled",true)
     }
 })

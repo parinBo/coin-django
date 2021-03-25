@@ -8,6 +8,10 @@
     color: white;
 }
 
+.bg-color{
+    background: #FFC2D1;
+}
+
 .btm-{
     position: absolute;
     right: 0;

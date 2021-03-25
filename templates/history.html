@@ -1,8 +1,53 @@
-{% extends "./share/layout.html" %}
-
+{% include './share/layout.html' %}
 {% load static %}
-
 {% block content %}
-
-
+<div class="container">
+		<div class="row justify-content-md-center mt-4">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+				<div class="card active-btn" style="margin-top:100px">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-6"><p class="btn active-btn" id="signinbtn" style="width:100%">Signin</p></div>
+							<div class="col-6"><p class="btn wait-btn" id="signupbtn"  style="width:100%">Signup</p></div>
+						</div>
+						<form action="" method="post" id="signinform">
+							<div class="row mt-4">
+							{% csrf_token %}
+								<div class="col-12">
+									<div class="form-group">
+									<label for="email">Email address:</label>
+										<input type="text" class="form-control" name="username"  placeholder="Email" required>
+									</div>
+								</div>
+								</div>
+								<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+									<label for="password">password:</label>
+										<input type="password" class="form-control" name="password"  placeholder="Password" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+									<div class="btm-">If you forget <a href="http://" >your password</a></div>
+							</div>
+							<input type="submit" class="btn wait-btn" value="login">
+						</form>
+						<form action="signup" method="post" id="signupform">
+							{% csrf_token %}
+							{{form.first_name.label_tag}}
+							{{form.first_name}}
+							{{form.username.label_tag}}
+							{{form.username}}
+							<input type="submit" class="btn wait-btn" id="signupInputbtn" value="Signup">
+						</form>
+                    </div>
+				</div>
+			</div>
+		</div>
+</div>
 {% endblock content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>

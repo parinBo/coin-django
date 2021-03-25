@@ -1,12 +1,38 @@
-{% extends "./share/layout.html" %}
-
+{% include "./share/layout.html" %}
 {% load static %}
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% block content %}
 
-<div class="container">
-    <div class="d-flex justify-content-center">
-        <h1>test</h1>
+<div class="container mt-5">
+    <h1 style="text-align:center;">Add coin</h1>
+    <div class="card bg-color" style="margin:auto">
+        <div class="card-body">
+            <form action="" method="post" id="signupform">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="mb-3 col-md-4 col-12">
+                        <label for="disabledTextInput" class="form-label">{{form.coin.label_tag}}</label>
+                        {{form.coin}}
+                    </div>
+                     <div class="mb-3 col-md-4 col-12">
+                        <label for="disabledTextInput" class="form-label">{{form.price.label_tag}}</label>
+                        {{form.price}}
+                        <span style="color:red;list-style:none;">{{ form.errors.price|striptags }}</span>
+                    </div>
+                    <div class="mb-3 col-md-4 col-12">
+                        <label for="disabledTextInput" class="form-label">{{form.pay.label_tag}}</label>
+                        {{form.pay}}
+                        <span style="color:red;list-style:none;">{{ form.errors.pay|striptags }}</span>
+                    </div>
+
+                </div>
+                
+                <div>
+                    <input type="submit" class="btn wait-btn" id="signupInputbtn" value="Submit" style="position:relative;left:50%">
+                </div>
+                
+            </form>
+        </div>
     </div>
 </div>
 

@@ -11,12 +11,12 @@
 							<div class="col-6"><p class="btn wait-btn" id="signupbtn"  style="width:100%">Signup</p></div>
 						</div>
 						<form action="" method="post" id="signinform">
-						   {% csrf_token %}
 							<div class="row mt-4">
+							{% csrf_token %}
 								<div class="col-12">
 									<div class="form-group">
 									<label for="email">Email address:</label>
-										<input type="text" class="form-control" name="username"  placeholder="Email">
+										<input type="text" class="form-control" name="username"  placeholder="Email" required>
 									</div>
 								</div>
 								</div>
@@ -24,7 +24,7 @@
 								<div class="col-12">
 									<div class="form-group">
 									<label for="password">password:</label>
-										<input type="password" class="form-control" name="password"  placeholder="Password">
+										<input type="password" class="form-control" name="password"  placeholder="Password" required>
 									</div>
 								</div>
 							</div>
@@ -34,18 +34,26 @@
 							<input type="submit" class="btn wait-btn" value="login">
 						</form>
 						<form action="signup" method="post" id="signupform">
+							<div class="row">
+								<div class="col-sm-12">
+										<div class="form-group">
+											<label for="email">Email :</label>
+											<input type="email" class="form-control" name="email"  placeholder="Email" required>
+										</div>
+								</div>
+							</div>
 							{% csrf_token %}
-							<div class="row mt-4">
+							<div class="row ">
 								<div class="col-md-6 col-sm-12">
 									<div class="form-group">
-										<label for="email">Email :</label>
-										<input type="text" class="form-control" name="email"  placeholder="Email">
+										<label for="email">username :</label>
+										<input type="text" class="form-control" name="username"  placeholder="Username" required>
 									</div>
 								</div>
 								<div class="col-md-6 col-sm-12">
 									<div class="form-group">
 									<label for="password">password:</label>
-										<input type="password" class="form-control" name="password"  placeholder="Password">
+										<input type="password" class="form-control" name="password"  placeholder="Password" required>
 									</div>
 								</div>
 							</div>
@@ -53,22 +61,22 @@
 								<div class="col-md-6 col-sm-12">
 									<div class="form-group">
 										<label for="email">Firstname :</label>
-										<input type="text" class="form-control" name="firstname"  placeholder="firstname">
+										<input type="text" class="form-control" name="firstname"  placeholder="firstname" required>
 									</div>
 								</div>
 								<div class="col-md-6 col-sm-12">
 									<div class="form-group">
 									<label for="password">Lastname:</label>
-										<input type="text" class="form-control" name="lastname"  placeholder="lastname">
+										<input type="text" class="form-control" name="lastname"  placeholder="lastname" required>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 									<div class="btm-">
-									<input type="checkbox" name="terms" id="terms" class="mx-2">I agree with the<a href="http://" > Terms</a>
+									<input type="checkbox" name="terms" id="terms" class="mx-2" required>I agree with the<a href="http://" > Terms</a>
 								</div>
 							</div>
-							<input type="submit" class="btn wait-btn" value="Signup">
+							<input type="submit" class="btn wait-btn" id="signupInputbtn" value="Signup">
 						</form>
                     </div>
 				</div>
