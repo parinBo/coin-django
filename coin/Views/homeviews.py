@@ -1,14 +1,13 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from .forms import SignUp,AddCoin
-from .models import  AddCoin as coin
+from ..Models.bitkub import Bitkub 
+from pprint import pprint
+
 def home(req):
-    a = coin.objects.all()
-    return render(req,'index.html',{'data':a})
-
-
+    coins = Bitkub.coins()
+    pprint(coins)
+    return render(req,'index.html',{"coins":coins})
 
 def register(request):
     if request.method == 'POST':
@@ -32,15 +31,4 @@ def register(request):
             return redirect('home')
     return render(request,'login.html')
 
-@login_required
-def addcoin(request):
-    form = AddCoin()
-    if request.method == 'POST':
-        form = AddCoin(request.POST)
-        if form.is_valid():
-            hi='test'
-            print(request.POST)
-            print("wow")
-        else:
-            form = AddCoin(request.POST)
-    return render(request, 'addCoin.html', {'form': form})
+

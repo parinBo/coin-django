@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'djangoCoin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER':'mydjango',
+        'PASSWORD':'parinya',
+        'HOST':'35.202.219.150',
     }
 }
 

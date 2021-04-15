@@ -1,13 +1,16 @@
 from django.contrib import admin
-from django.urls import path
-from coin import views
-from django.contrib.auth import views as auth_views
+from django.urls import path,include
+from coin.Views import coinviews,homeviews
+from django.contrib.auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home,name="home"),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'),name='login'),
-    path('logout', auth_views.LogoutView.as_view(),name='logout'),
-    path('login/signup',views.register,name="register"),
-    path('addcoin',views.addcoin)
+    path('login/', views.LoginView.as_view(template_name='login.html'),name='login'),
+    path('logout', views.LogoutView.as_view(),name='logout'),
+    path('',homeviews.home,name="home"),
+    path('login/signup',homeviews.register,name="register"),
+    path('coin/addcoin',coinviews.addcoin),
+    path('coin/history',coinviews.history),
+    path('coin/mycoin',coinviews.mycoin),
+    path('coin',coinviews.mycoin)
 
 ]
